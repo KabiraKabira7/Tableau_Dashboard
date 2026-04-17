@@ -1487,6 +1487,57 @@
       </table>
       <simple-id uuid='{C5D5BB1A-360E-415F-BB20-2B1E69EA8FA5}' />
     </worksheet>
+    <worksheet name='Sheet 7'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='vgsales' name='federated.1atbrvl0fclacm18xx7oo1qn7dw3' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1atbrvl0fclacm18xx7oo1qn7dw3'>
+            <column caption='Global Sales - EU Sales' datatype='real' name='[Calculation_0405230711967745]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Global_Sales]-[EU_Sales]' />
+            </column>
+            <column caption='EU Sales' datatype='real' name='[EU_Sales]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Genre]' role='dimension' type='nominal' />
+            <column caption='Global Sales' datatype='real' name='[Global_Sales]' role='measure' type='quantitative' />
+            <column-instance column='[Genre]' derivation='None' name='[none:Genre:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_0405230711967745]' derivation='Sum' name='[sum:Calculation_0405230711967745:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Global_Sales]' derivation='Sum' name='[sum:Global_Sales:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.1atbrvl0fclacm18xx7oo1qn7dw3].[sum:Calculation_0405230711967745:qk]' />
+              <color column='[federated.1atbrvl0fclacm18xx7oo1qn7dw3].[sum:Global_Sales:qk]' />
+              <text column='[federated.1atbrvl0fclacm18xx7oo1qn7dw3].[none:Genre:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{B4E35AA1-E2E6-49DD-8288-024E55D6FAFD}' />
+    </worksheet>
   </worksheets>
   <dashboards>
     <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
@@ -1536,8 +1587,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='37' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='36' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='39' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='38' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone fixed-size='280' h='48792' id='3' is-fixed='true' name='Sheet 1' w='58971' x='588' y='1208'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1786,7 +1837,7 @@
       </viewpoint>
       <simple-id uuid='{3AE08828-1202-40CD-BF9F-25CBB73B1C64}' />
     </window>
-    <window class='worksheet' maximized='true' name='Sheet 6'>
+    <window class='worksheet' name='Sheet 6'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1820,6 +1871,41 @@
         </highlight>
       </viewpoint>
       <simple-id uuid='{F694D6D0-B8FE-4943-AB0D-5BA900EC57AD}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 7'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1atbrvl0fclacm18xx7oo1qn7dw3].[sum:Global_Sales:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1atbrvl0fclacm18xx7oo1qn7dw3].[none:Genre:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{B744CCD4-AB05-4988-82E4-2E9E01104D49}' />
     </window>
   </windows>
   <thumbnails>
@@ -3361,6 +3447,45 @@
       NaH6VqH5V6O4GoHJ3STKXJ6yAEoIaWWwMmEw4+fSCxQNoXpQ9AqE4soZB5XJG2UBlFnQlBeI
       yyxoygIos6ApC6DMgqYsgDILmrIAyixoygIos6ApC6DMgqYsgDILmrIAyixoygIos6ApC6DM
       gqYsgDILmrIAyixoygIos6D5f+apPC1h32IoAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 7' width='192'>
+      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
+      M0k1AAAAAElFTkSuQmCC
     </thumbnail>
   </thumbnails>
 </workbook>
